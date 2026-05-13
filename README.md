@@ -133,5 +133,3 @@ Contributions are welcome! Please:
 ## Author
 
 **Rajesh Nautiyal** — Product Manager, Azure Application Gateway, Microsoft
-
-Built with AI-assisted development (GitHub Copilot + Claude) in ~5 weeks.
