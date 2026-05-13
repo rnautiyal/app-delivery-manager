@@ -1,0 +1,16 @@
+#cloud-config
+package_update: true
+packages:
+  - nginx
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <!DOCTYPE html>
+      <html><head><title>Backend Health Check</title>
+      <style>body{font-family:Arial;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;background:#e74c3c;color:white}
+      .card{background:rgba(255,255,255,0.15);padding:40px 60px;border-radius:16px;text-align:center}
+      h1{font-size:3em;margin:0}p{font-size:1.5em;opacity:0.9}</style></head>
+      <body><div class="card"><h1>Central US</h1><p>Region: centralus</p><p>VM: vm-backend-cus</p><p>Status: Healthy &#x2705;</p></div></body></html>
+runcmd:
+  - systemctl enable nginx
+  - systemctl restart nginx

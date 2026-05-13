@@ -1,0 +1,166 @@
+[
+  {
+    "id": "863b4608-629c-4ccc-b084-cdac041eb47c",
+    "name": "sad",
+    "description": "cas",
+    "createdAt": "2026-04-30T21:27:00.845Z",
+    "createdBy": "demo@appgw-manager.com",
+    "sourceGateway": {
+      "name": "mtlsAppGw",
+      "resourceGroup": "AppGWTeam",
+      "subscriptionId": "64d48c73-c5f4-4817-93d8-65908359d9b4"
+    },
+    "config": {
+      "sku": {
+        "name": "Standard_v2",
+        "tier": "Standard_v2"
+      },
+      "backendAddressPools": [
+        {
+          "name": "pool2",
+          "backendAddresses": [
+            {
+              "fqdn": "httpforever.com"
+            }
+          ]
+        }
+      ],
+      "backendHttpSettingsCollection": [
+        {
+          "name": "settings2",
+          "port": 80,
+          "protocol": "Http",
+          "cookieBasedAffinity": "Disabled",
+          "requestTimeout": 50,
+          "pickHostNameFromBackendAddress": false,
+          "affinityCookieName": "ApplicationGatewayAffinity",
+          "path": null,
+          "dedicatedBackendConnection": false,
+          "validateCertChainAndExpiry": true,
+          "validateSNI": true,
+          "sniName": null
+        }
+      ],
+      "httpListeners": [
+        {
+          "name": "listener2",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/frontendIPConfigurations/appGatewayFrontendIP"
+          },
+          "frontendPort": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/frontendPorts/port_443"
+          },
+          "protocol": "Https",
+          "sslCertificate": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/sslCertificates/sslCert"
+          },
+          "sslProfile": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/sslProfiles/sslnotrustedcert"
+          },
+          "requireServerNameIndication": false,
+          "customErrorConfigurations": [],
+          "hostNames": []
+        },
+        {
+          "name": "secure",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/frontendIPConfigurations/appGatewayFrontendIP"
+          },
+          "frontendPort": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/frontendPorts/port2"
+          },
+          "protocol": "Https",
+          "sslCertificate": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/sslCertificates/sslCert"
+          },
+          "sslProfile": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/sslProfiles/secure"
+          },
+          "requireServerNameIndication": false,
+          "customErrorConfigurations": [],
+          "hostNames": []
+        },
+        {
+          "name": "app",
+          "frontendIPConfiguration": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/frontendIPConfigurations/appGatewayFrontendIP"
+          },
+          "frontendPort": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/frontendPorts/port_80"
+          },
+          "protocol": "Http",
+          "requireServerNameIndication": false,
+          "customErrorConfigurations": [],
+          "hostNames": []
+        }
+      ],
+      "requestRoutingRules": [
+        {
+          "name": "rule2",
+          "ruleType": "Basic",
+          "priority": 2,
+          "backendAddressPool": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/backendAddressPools/pool2"
+          },
+          "backendHttpSettings": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/backendHttpSettingsCollection/settings2"
+          },
+          "httpListener": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/httpListeners/app"
+          },
+          "rewriteRuleSet": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/rewriteRuleSets/Certrule"
+          }
+        },
+        {
+          "name": "secure",
+          "ruleType": "Basic",
+          "priority": 10,
+          "backendAddressPool": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/backendAddressPools/pool2"
+          },
+          "backendHttpSettings": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/backendHttpSettingsCollection/settings2"
+          },
+          "httpListener": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/httpListeners/secure"
+          }
+        },
+        {
+          "name": "rule1",
+          "ruleType": "Basic",
+          "priority": 15,
+          "backendAddressPool": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/backendAddressPools/pool2"
+          },
+          "backendHttpSettings": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/backendHttpSettingsCollection/settings2"
+          },
+          "httpListener": {
+            "id": "/subscriptions/64d48c73-c5f4-4817-93d8-65908359d9b4/resourceGroups/AppGWTeam/providers/Microsoft.Network/applicationGateways/mtlsAppGw/httpListeners/listener2"
+          }
+        }
+      ],
+      "probes": [],
+      "frontendPorts": [
+        {
+          "name": "port2",
+          "port": 444
+        },
+        {
+          "name": "port_443",
+          "port": 443
+        },
+        {
+          "name": "port_80",
+          "port": 80
+        },
+        {
+          "name": "port_25",
+          "port": 25
+        }
+      ],
+      "tags": {}
+    }
+  }
+]

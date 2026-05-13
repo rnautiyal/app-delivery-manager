@@ -1,0 +1,20 @@
+[
+  {
+    "id": "461d6ebe-d2c0-4d12-b23e-d8ce63550c8d",
+    "userId": "demo-user",
+    "userName": "Demo Viewer",
+    "planId": "free",
+    "billingMonth": "2026-04",
+    "requestsUsed": 0,
+    "requestsIncluded": 0,
+    "totalTokensInput": 0,
+    "totalTokensOutput": 0,
+    "estimatedAiCost": 0,
+    "overageRequests": 0,
+    "overageCharges": 0,
+    "totalCharge": 0,
+    "history": [],
+    "createdAt": "2026-04-26T13:14:11.446Z",
+    "updatedAt": "2026-04-26T13:14:11.446Z"
+  }
+]

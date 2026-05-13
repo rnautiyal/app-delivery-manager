@@ -1,0 +1,38 @@
+{
+  "failoverGroups": [
+    {
+      "id": "fg-prod-app",
+      "name": "Production App",
+      "dnsZone": "failover.internal",
+      "dnsResourceGroup": "appgw-private-dns-failover-rg",
+      "recordName": "app",
+      "subscriptionId": "64d48c73-c5f4-4817-93d8-65908359d9b4",
+      "endpoints": [
+        {
+          "ip": "10.20.0.10",
+          "appGateway": "appgw-cc-primary",
+          "resourceGroup": "appgw-private-dns-failover-rg",
+          "region": "canadacentral",
+          "label": "Canada Central",
+          "priority": 1
+        },
+        {
+          "ip": "10.21.0.10",
+          "appGateway": "appgw-cus-secondary",
+          "resourceGroup": "appgw-private-dns-failover-rg",
+          "region": "centralus",
+          "label": "Central US",
+          "priority": 2
+        }
+      ],
+      "failoverMode": "active-active",
+      "probeIntervalSeconds": 30,
+      "failureThreshold": 3,
+      "autoFailover": true,
+      "ttlSeconds": 10,
+      "createdAt": "2026-05-08T00:00:00Z",
+      "createdBy": "admin"
+    }
+  ],
+  "failoverHistory": []
+}

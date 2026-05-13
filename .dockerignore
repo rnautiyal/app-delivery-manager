@@ -1,0 +1,16 @@
+node_modules
+dist
+build
+.git
+.claude
+*.md
+tests
+.eslintrc.json
+.prettierrc
+.github
+docs
+package-lock.json
+src/backend/dist
+src/frontend/dist
+*.pptx
+~$*

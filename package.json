@@ -1,0 +1,25 @@
+{
+  "name": "appgw-manager",
+  "version": "1.0.0",
+  "description": "Azure Application Gateway Centralized Manager",
+  "private": true,
+  "workspaces": [
+    "src/backend",
+    "src/frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "npm run dev --workspace=src/backend",
+    "dev:frontend": "npm run dev --workspace=src/frontend",
+    "build": "npm run build --workspace=src/backend && npm run build --workspace=src/frontend",
+    "test": "npm run test --workspace=src/backend && npm run test --workspace=src/frontend",
+    "lint": "npm run lint --workspace=src/backend && npm run lint --workspace=src/frontend"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.0"
+  }
+}
