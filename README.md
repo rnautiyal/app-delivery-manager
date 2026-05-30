@@ -1,8 +1,6 @@
-# Application Delivery Manager
+# App Delivery Manager — Single Pane of Glass for Azure & Multi-Cloud Networking
 
-AI-powered platform for centralized management and operations of Azure Application Gateways, Azure Firewalls, and cross-cloud app delivery services.
-
-**Original Developer:** Rajesh Nautiyal ([@rnautiyal](https://github.com/rnautiyal))
+AI-powered unified management platform that brings all Azure networking services — Application Gateway, WAF, Firewall, DDoS Protection, Traffic Manager, Private DNS, and AFD — along with AWS ALB and GCP Load Balancers into a single pane of glass.
 
 ## What Is It
 
@@ -130,6 +128,4 @@ Contributions are welcome! Please:
 
 [MIT](LICENSE)
 
-## Author
 
-**Rajesh Nautiyal** — Product Manager, Azure Application Gateway, Microsoft
