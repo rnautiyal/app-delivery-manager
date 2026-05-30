@@ -9,7 +9,10 @@ A Container App that provides:
 - **Command Center** — React dashboard for fleet-wide visibility across subscriptions, regions, and clouds
 - **AppDelivery Genie** — AI chat assistant (Claude LLM) with 72 operational functions for natural language infrastructure management
 - **Private Traffic Manager** — Health-based DNS failover for Azure Private DNS Zones (fills a gap Azure doesn't cover)
+- **Traffic Manager** — Azure Traffic Manager integration with health monitoring and endpoint management
+- **Azure Front Door** — CDN and global load balancing management with WAF policies
 - **Firewall Manager** — Centralized view of Azure Firewalls and Firewall Policies
+- **Log Analytics** — KQL-powered log queries, access logs, WAF logs, 502 analysis, and backend latency insights
 - **Multi-Cloud** — Azure AppGW + AWS ALB + GCP LB from one platform
 
 ## Architecture
