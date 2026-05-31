@@ -2,7 +2,7 @@
 
 AI-powered unified management platform that brings all Azure networking services — Application Gateway, WAF, Firewall, DDoS Protection, Traffic Manager, Private DNS, and AFD — along with AWS ALB and GCP Load Balancers into a single pane of glass.
 
-**Live Demo:** [appgw-manager.ambitiousriver-d987d50a.eastus.azurecontainerapps.io](https://appgw-manager.ambitiousriver-d987d50a.eastus.azurecontainerapps.io)
+**Live Demo (no login required):** [Launch Demo](https://appgw-manager.ambitiousriver-d987d50a.eastus.azurecontainerapps.io?demo=demoview)
 
 ## What Is It
 
